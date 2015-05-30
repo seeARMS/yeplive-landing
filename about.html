@@ -1,9 +1,54 @@
+<script>
+ function failed(e) {
+   // video playback failed - show a message saying why
+   switch (e.target.error.code) {
+     case e.target.error.MEDIA_ERR_ABORTED:
+       console.log('The fetching process for the media resource was aborted by the user agent at the user"s request.');
+       break;
+     case e.target.error.MEDIA_ERR_NETWORK:
+       console.log('A network error of some description caused the user agent to stop fetching the media resource, after the resource was established to be usable.');
+       break;
+     case e.target.error.MEDIA_ERR_DECODE:
+       console.log('An error of some description occurred while decoding the media resource, after the resource was established to be usable.');
+       break;
+     case e.target.error.MEDIA_ERR_SRC_NOT_SUPPORTED:
+       console.log('The media resource indicated by the src attribute was not suitable.');
+       break;
+     default:
+       console.log('An unknown error occurred.');
+       break;
+   }
+ }
+</script>
+
 <div style="color:black;">
 
-<video autoplay="" id="about-vid" style="width:100%" >
-	<source src="assets/vid/about.webm" type="video/webm">
-	<source src="assets/vid/about.mp4" type="video/mp4">
+<!--
+<video onerror="failed(event)" id="about-vid" autoplay="" class="video-js vjs-default-skin" controls="true">
+
+    <source src="http://d1tl42tmnr5j9u.cloudfront.net/about.webm" type='video/webm' />
+
+    <p class="vjs-no-js">To view this video please enable JavaScript, and consider upgrading to a web browser that <a href="http://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a></p>
 </video>
+
+
+<video onerror="failed(event)" id="example_video_1" class="video-js vjs-default-skin" controls preload="none" width="640" height="264"
+      poster="http://video-js.zencoder.com/oceans-clip.png"
+      data-setup="{}">
+    <source src="http://d1tl42tmnr5j9u.cloudfront.net/about.mp4" type='video/mp4' />
+    <source src="http://video-js.zencoder.com/oceans-clip.webm" type='video/webm' />
+    <source src="http://video-js.zencoder.com/oceans-clip.ogv" type='video/ogg' />
+    <track kind="captions" src="demo.captions.vtt" srclang="en" label="English"></track>
+    <track kind="subtitles" src="demo.captions.vtt" srclang="en" label="English"></track>
+    <p class="vjs-no-js">To view this video please enable JavaScript, and consider upgrading to a web browser that <a href="http://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a></p>
+</video>-->
+
+
+<video autoplay="" id="about-vid" onerror="failed(event)" style="width:100%" >
+	<source src="assets/vid/about.mp4" type="video/mp4">
+	<source src="assets/vid/about.webm" type="video/webm">
+</video>
+
 
 <h4 style-"color:black">Yeplive™ is built for discovery.</h4>
 <p> Find out what's happening inside that concert hall you hear cheering from, stumble upon your favorite artist streaming from an event in your neighborhood, or be part of a political event from the vantage point of the front lines, all with the click of a pin!</p> 

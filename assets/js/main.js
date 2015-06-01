@@ -10,7 +10,14 @@ $(document).ready( function () {
            register($form);
         });
     }
-/*
+
+    if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+
+      $('video#about-vid').attr('controls', 'true');
+    }
+/*  
+
+
 
     $('#btn-terms').bind('click', function ( event ) {
         if ( event ) event.preventDefault();

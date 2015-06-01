@@ -19,6 +19,10 @@
        break;
    }
  }
+
+ if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+    $('video#about-vid').attr('controls', 'true');
+  }
 </script>
 
 <div style="color:black;">
